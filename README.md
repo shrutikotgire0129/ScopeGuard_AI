@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ScopeGuard AI
+
+**Protect your work. Keep scope in check.**
+
+ScopeGuard AI is an AI-powered scope analysis tool designed for freelancers. It compares a client’s new request against an existing project agreement, identifies potentially out-of-scope work, and helps freelancers communicate scope changes professionally.
+
+## Live Demo
+
+- **Primary Demo (Vercel):** https://scope-guard-ai-wine.vercel.app/
+- **Render Deployment:** https://scopeguard-ai.onrender.com/
+
+## Problem Statement
+
+Freelancers often face scope creep when clients request additional features that were not included in the original agreement. Tracking these changes and communicating additional costs can be difficult.
+
+ScopeGuard AI helps freelancers review requests, understand scope boundaries, and prepare clear responses before agreeing to extra work.
+
+## Key Features
+
+- **AI Scope Analysis:** Compare a project agreement with a client's new request.
+- **Evidence-Based Results:** Show supporting agreement excerpts for scope decisions.
+- **Three Scope Outcomes:** Included, potentially out of scope, or needs clarification.
+- **Client Reply Generator:** Generate professional responses to clients.
+- **Change-Order Generator:** Prepare change-order text and calculate proposed fees from estimated hours and hourly rates.
+- **Cloud History:** Save and retrieve analyses for signed-in users.
+- **Authentication:** Secure sign-in and user-specific history.
+- **Demo Workflow:** Explore the application using sample scenarios.
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Groq API with `openai/gpt-oss-20b`
+- MongoDB Atlas
+- Clerk Authentication
+- Vercel and Render
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js and npm
+- A Groq API key
+- A MongoDB Atlas connection string
+- Clerk application keys
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   `git clone https://github.com/shrutikotgire0129/ScopeGuard_AI.git`
 
-## Learn More
+2. Open the project directory:
 
-To learn more about Next.js, take a look at the following resources:
+   `cd ScopeGuard_AI`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Install dependencies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   `npm install`
 
-## Deploy on Vercel
+4. Create a `.env.local` file in the project root and configure the required environment variables. Use `.env.example` if provided; otherwise, refer to the variable names documented in the project setup instructions. Never commit secret values.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Start the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   `npm run dev`
+
+6. Open http://localhost:3000.
+
+## Environment Variables
+
+Configure the following variables in `.env.local`:
+
+- `GROQ_API_KEY`
+- `MONGODB_URI`
+- `NEXT_PUBLIC_CLERK_SIGN_IN_URL`
+- `NEXT_PUBLIC_CLERK_SIGN_UP_URL`
+- `NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL`
+- `NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL`
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+- `CLERK_SECRET_KEY`
+
+## Security
+
+Keep API keys, database credentials, and authentication secrets in environment variables. Never commit `.env.local` or expose secret values in source code.
+
+## Challenge
+
+Built for the DEV Hacktoberfest Week 2 2026 challenge.
